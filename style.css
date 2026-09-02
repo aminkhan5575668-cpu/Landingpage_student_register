@@ -1,0 +1,192 @@
+/* ---------------------------------------------
+   Tokens
+--------------------------------------------- */
+:root {
+  --ink: #1c2541;
+  --ink-soft: #4b5265;
+  --paper: #fbf9f4;
+  --paper-card: #ffffff;
+  --line: #ddd6c6;
+  --accent: #a8763e;
+  --accent-soft: #f1e6d3;
+  --focus: #6b8f9c;
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at 1px 1px, #efe9da 1px, transparent 0) 0 0/22px 22px,
+    var(--paper);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+}
+
+/* ---------------------------------------------
+   Card
+--------------------------------------------- */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 44px 36px 32px;
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.card__tab {
+  position: absolute;
+  top: -13px;
+  left: 32px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.card__header h1 {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.25;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.card__header p {
+  margin: 0 0 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+
+/* ---------------------------------------------
+   Form
+--------------------------------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.field input {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--line);
+  padding: 8px 2px;
+  transition: border-color 0.15s ease;
+}
+
+.field input::placeholder {
+  color: #b7b0a0;
+}
+
+.field input:hover {
+  border-bottom-color: #b7ac93;
+}
+
+.field input:focus {
+  outline: none;
+  border-bottom-color: var(--focus);
+}
+
+.field input:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------
+   Submit
+--------------------------------------------- */
+.submit {
+  margin-top: 8px;
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--ink);
+  border: none;
+  padding: 12px 26px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.submit:hover {
+  background: var(--accent);
+}
+
+.submit:active {
+  transform: scale(0.97);
+}
+
+.submit:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------
+   Footer
+--------------------------------------------- */
+.card__footer {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+}
+
+.card__footer span {
+  font-size: 11.5px;
+  color: #a39c8a;
+  letter-spacing: 0.01em;
+}
+
+/* ---------------------------------------------
+   Responsive
+--------------------------------------------- */
+@media (max-width: 420px) {
+  .card {
+    padding: 40px 24px 26px;
+  }
+
+  .card__header h1 {
+    font-size: 22px;
+  }
+}
