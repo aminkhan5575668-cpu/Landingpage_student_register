@@ -42,3 +42,4 @@ open index.html   # or just double-click the file
 ## License
 
 Free to use for learning and practice.
+v<img width="971" height="797" alt="image" src="https://github.com/user-attachments/assets/2f9125e1-a084-4935-a990-2bf7daa32965" />
